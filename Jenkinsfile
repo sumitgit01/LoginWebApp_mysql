@@ -14,7 +14,7 @@ pipeline {
                     echo '**Building the project**'
                     pwd
                     ls -alrt
-                    mvn clean package
+                    maven clean package
                     echo '**Build completed**'
                 """
             }
