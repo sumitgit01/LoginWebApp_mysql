@@ -1,6 +1,7 @@
 pipeline {
     agent {
         label 'seh-login'
+    }
     stages {
         stage("git checkout") {
             steps { 
