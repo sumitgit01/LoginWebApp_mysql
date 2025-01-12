@@ -37,6 +37,9 @@ pipeline {
                     pom = readMavenPom file: "pom.xml"; //com.ranjitswain:LoginWebApp_mysql:0.0.1-SNAPSHOT
                     println "POM== " + pom 
                     println "POM== ${pom}"
+                    println "${pom.packaging}"
+                    // Find built artifact under target folder
+                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}")
                 }
             }
         }
