@@ -40,6 +40,7 @@ pipeline {
                     println "${pom.packaging}"
                     // Find built artifact under target folder
                     filesByGlob = findFiles(glob: "target/*.${pom.packaging}")
+                    println "fileByGlob valueis =" + filesByGlob
                 }
             }
         }
