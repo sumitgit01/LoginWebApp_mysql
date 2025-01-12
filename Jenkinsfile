@@ -65,6 +65,13 @@ pipeline {
                                 type: pom.packaging]
                             ]
                         );
+                            script {
+                            def filesByGlob = findFiles(glob: 'target/*.war')
+                            if (filesByGlob.isEmpty()) {
+                            error "Artifact not found in target/ directory."
+    }
+                            echo "Uploading artifact: ${filesByGlob[0].path}"
+}
 
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
