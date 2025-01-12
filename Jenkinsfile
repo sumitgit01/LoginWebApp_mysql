@@ -41,7 +41,7 @@ pipeline {
                     // Find built artifact under target folder
                     filesByGlob = findFiles(glob: "target/*.${pom.packaging}")
                     println "fileByGlob valueis =" + filesByGlob
-                    echo "${fileByGlob[0].name}"
+                    echo "${fileByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
                 }
             }
         }
