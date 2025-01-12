@@ -34,8 +34,9 @@ pipeline {
         stage ("deploy to nexus") {
             steps {
                 script {
-                    pom = readMavenPom file: "pom.xml";
-                    println "POM" + pom
+                    pom = readMavenPom file: "pom.xml"; //com.ranjitswain:LoginWebApp_mysql:0.0.1-SNAPSHOT
+                    println "POM== " + pom 
+                    println "POM== ${pom}"
                 }
             }
         }
