@@ -10,7 +10,7 @@ pipeline {
 		// Where your nexus is running
 		NEXUS_URL = "192.168.18.11:8081"
 		// Repository where we will upload the artifact
-		NEXUS_REPOSITORY = "maven"
+		NEXUS_REPOSITORY = "LoginWebApp"
 		// Jenkins credential id to authenticate to Nexus OSS
 		NEXUS_CREDENTIAL_ID = "nexusCredential"
     }
@@ -65,13 +65,13 @@ pipeline {
                                 type: pom.packaging]
                             ]
                         );
-                            script {
+                            /* script {
                             def filesByGlob = findFiles(glob: 'target/*.war')
                             if (filesByGlob.isEmpty()) {
                             error "Artifact not found in target/ directory."
     }
                             echo "Uploading artifact: ${filesByGlob[0].path}"
-}
+} */
 
                     } else {
                         error "*** File: ${artifactPath}, could not be found";
